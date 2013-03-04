@@ -25,6 +25,7 @@ Ember.Rails.FlashMessagesController = Ember.ArrayController.extend
 
   createMessage: (args) ->
     message = Ember.Rails.FlashMessage.create args
+    @get('content').clear()
     @get('content').pushObject(message)
 
 Ember.Rails.flashMessages = Ember.Rails.FlashMessagesController.create
